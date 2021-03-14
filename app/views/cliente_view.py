@@ -1,24 +1,10 @@
 from flask import render_template, redirect, url_for, request
 
 from app.forms import cliente_form
-from app import db
-
 from app import app
 from app.models import cliente_model
 from app.entidades import cliente
 from app.services import cliente_service
-
-
-# @app.route("/ola", defaults={'nome': None})
-# @app.route("/ola/<string:nome>")
-# def teste(nome):
-#     return render_template("clientes/teste.html", nome_usuario=nome)
-#
-# @app.route("/oi")
-# def oi():
-#     return "Oi, mundo em Flask!!"
-
-
 
 @app.route("/cadastrar_cliente", methods=["GET", "POST"])
 def cadastrar_cliente():

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block titulo %}
+
+        {% endblock titulo %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+<!-- ** HEADER ** -->
+<div style="width: 100%">
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5e00a3;" >
+
+		<a class="navbar-brand" href="">App Flask</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="/listar_clientes" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> Cliente </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/listar_clientes">Listar</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/cadastrar_cliente">Cadastrar</a>
+					</div>
+				</li>
+
+			</ul>
+
+		</div>
+	</nav>
+</div>
+
+
+
+<main class="container">
+    {% block conteudo %}
+
+    {% endblock conteudo %}
+</main>
+
+<!-- ** FOOTER ** -->
+<div style="width: 100%">
+    <footer class="footer" style="background-color: #5e00a3; position: fixed;  left: 0;  bottom: 0;  width: 100%; color: white;  text-align: center;" >
+        <div class="container" >
+            <span style="color: #FFFFFF;">Developer: Dagson Souza  <a href="mailto:dagson.souza@alertsystem.com.br">dagson.souza@alertsystem.com.br</a></span>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}" ></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>
+</body>
+</html>
