@@ -5,7 +5,8 @@ Listagem de Clientes
 {% endblock titulo %}
 
 {% block conteudo %}
-<table class="table">
+{{super()}}
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Nome</th>
@@ -17,8 +18,8 @@ Listagem de Clientes
     <tbody>
         {% for i in clientes %}
             <tr>
-                <td><a href="{{ url_for('listar_cliente', id=i.id) }}">{{i.nome}}</a></td>
-                <td>{{i.data_nascimento}}</td>
+                <td><a href="{{ url_for('listar_cliente', id=i.id) }}">{{i.nome | upper}}</a></td>
+                <td>{{i.data_nascimento.strftime('%d/%m/%Y') }}</td>
                 <td>{{i.profissao}}</td>
                 <td>
                     <a class="btn btn-outline-primary" href="{{ url_for('editar_cliente', id=i.id) }}">Editar</a>
@@ -29,7 +30,7 @@ Listagem de Clientes
     </tbody>
 
 </table>
-<a href="{{ url_for('cadastrar_cliente') }}"><button class="btn btn-primary">Cadastrar Cliente</button></a>
+<a href="{{ url_for('cadastrar_cliente') }}"><button class="btn btn-primary">{{_('Cadastrar Cliente')}}</button></a>
 
 
 {% endblock conteudo %}

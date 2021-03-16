@@ -5,12 +5,16 @@ Aplicação desenvolvida em Flask aplicando os fundamentos do micro-framework.
 
  - CRUD completo de clientes com validação tanto no front-end quanto no back-end
 
- - Tradução da aplicação para o português do Brasil
+ - Internacionalização da Aplicação
 
-#### Ferramentas utilizadas para desenvolvimento:
+#### Ferramentas e Libs utilizadas para desenvolvimento:
   - Python 3.6.8
   - PyCharm Community Edition
   - Flask 1.1.2
+  - Jinja2
+  - Babel
+  - WTForms
+  - SQLAlchemy 
   - MySQL 8.0
 
 #### Estrutura da aplicação
